@@ -1,0 +1,13 @@
+.consult {
+    background: url(../image/bg_cross.jpg) center (center/cover) no-repeat;
+    padding: 100px 0 92px 0;
+    min-height: 680px;
+    &__descr {
+        font-size: 20px;
+        line-height: 1.2;
+        font-weight: 500;
+        color: #ffffff;
+        width: 400px;
+        margin-top: 70px;
+    }
+}
