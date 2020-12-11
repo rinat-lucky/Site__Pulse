@@ -6,12 +6,15 @@
 @import 'blocks/advantage';
 @import 'blocks/consult';
 @import 'blocks/forms';
+@import 'blocks/slider';
+@import 'blocks/feedbacks';
 
 * {
     font-family: 'Museo Sans Cyrl', sans-serif;
 }
 
 .container {
+    position: relative;
     max-width: 950px;
     margin: 0 auto;
 }
