@@ -42,3 +42,19 @@ function toggleCard (item) {
 
 toggleCard ('.catalog-item__link');
 toggleCard ('.catalog-item__back');
+
+// modal 
+
+$('[data-modal=consultation').on('click', function () {
+    $('.overlay, #consultation').fadeIn();
+});
+$('.modal__close').on('click', function () {
+    $('.overlay, #consultation, #order, #thanx').fadeOut('slow');
+});
+
+$('.button_buy').each(function(i) {
+    $(this).on('click', function() {
+        $('#order .modal__descr').text($('.catalog-item__subtitle').eq(i).text());
+        $('.overlay, #order').fadeIn('slow');
+    });
+});
