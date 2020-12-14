@@ -1,6 +1,5 @@
 .slider {
     padding: 81px 0;
-    background-color: #f6f6f6;
     &__inner {
         position: relative;
         width: 750px;
@@ -12,7 +11,7 @@
         transform: translateY(-50%);
         left: -66px;
         border: none;
-        background-color:  #f6f6f6;
+        background-color: #fff;
         img {
             width: 31px;
             height: 50px;
