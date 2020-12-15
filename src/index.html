@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/style.min.css">
 </head>
 <body>
-    <section class="promo">
+    <section id='up' class="promo">
         <div class="container">
             <header class="header">
                 <a href="#" class="header__logo">
@@ -48,7 +48,7 @@
                 <button data-modal="consultation" class="button button_main">заказать консультацию</button>
                 <div class="promo__link">
                     или
-                    <a href="#">перейти в каталог</a>
+                    <a href="#catalog">перейти в каталог</a>
                 </div>
             </div>
         </div>
@@ -101,11 +101,11 @@
             </h2>
             <h3 class="consult__descr">
                 Просто заполните форму заявки<br> 
-                и мы перезвоним вам в течении 10 минут
+                и мы перезвоним вам в течение 10 минут
             </h3>
-            <form class="feed-form" action="#">
+            <form class="feed-form" id="consultation-form" action="#">
                 <input name="name" required placeholder="Ваше имя" type="text">
-                <input name="phone" required placeholder="Ваш телефон" type="tel">
+                <input name="phone" required placeholder="Ваш телефон">
                 <input name="email" required placeholder="Ваш e-mail" type="email">
                 <button class="button button_submit">Заказать консультацию</button>
             </form>
@@ -131,7 +131,7 @@
     </section>
 
 
-    <section class="catalog">
+    <section class="catalog" id='catalog'>
         <div class="container">
             <h2 class="title">Каталог пульсометров</h2>
             <ul class="catalog__tabs">
@@ -754,7 +754,7 @@
             <div class="modal__descr">и мы перезвоним вам в течение 10 минут</div>
             <form class="feed-form" action="#">
                 <input name="name" required placeholder="Ваше имя" type="text">
-                <input name="phone" required placeholder="Ваш телефон" type="tel">
+                <input name="phone" required placeholder="Ваш телефон">
                 <input name="email" required placeholder="Ваш e-mail" type="email">
                 <button class="button button_submit">Заказать консультацию</button>
             </form>
@@ -766,7 +766,7 @@
             <div class="modal__descr">Пульсометр Polar FT1</div>
             <form class="feed-form" action="#">
                 <input name="name" required placeholder="Ваше имя" type="text">
-                <input name="phone" required placeholder="Ваш телефон" type="tel">
+                <input name="phone" required placeholder="Ваш телефон">
                 <input name="email" required placeholder="Ваш e-mail" type="email">
                 <button class="button button_submit">Купить</button>
             </form>
@@ -782,8 +782,15 @@
         </div>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> <!-- скрипт для табов, карточек -->
+    <a href="#up" class="pageup">
+        <img src="image/circle-up.svg" alt="up">
+    </a>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script> <!-- скрипт для слайдера -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> <!-- скрипт для подключения jQuery -->
+    <script src="js/jquery.validate.min.js"></script> <!-- скрипт для валидации форм -->
+    <script src='js/jquery.maskedinput.min.js'></script>
     <script src="js/script.js"></script>
 
 </body>

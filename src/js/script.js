@@ -15,7 +15,7 @@ document.querySelector('.next').addEventListener('click', function () {
     slider.goTo('next');
 });
 
-// переключение табов (jQuery)
+// переключение табов в каталоге
 
 (function($) {
     $(function() {
@@ -28,7 +28,7 @@ document.querySelector('.next').addEventListener('click', function () {
     });
 })(jQuery);
 
-// разворот карточек (jQuery)
+// разворот карточек товаров
 
 function toggleCard (item) {
     $(item).each(function (i) {
@@ -39,7 +39,6 @@ function toggleCard (item) {
         });
     });
 }
-
 toggleCard ('.catalog-item__link');
 toggleCard ('.catalog-item__back');
 
@@ -57,4 +56,82 @@ $('.button_buy').each(function(i) {
         $('#order .modal__descr').text($('.catalog-item__subtitle').eq(i).text());
         $('.overlay, #order').fadeIn('slow');
     });
+});
+
+//  validate 
+
+function validateForms(form){
+    $(form).validate({
+        rules: {
+            name: {
+                required: true,
+                minlength: 2
+            },
+            phone: {
+                required: true,
+                minlength: 7
+            },
+            email: {
+                required: true,
+                email: true
+            }
+        },
+        messages: {
+            name: {
+                required: "Пожалуйста, введите свое имя",
+                minlength: jQuery.validator.format("Введите не менее {0} символов!")
+              },
+            phone: {
+                required: "Пожалуйста, введите свой номер телефона",
+                minlength: jQuery.validator.format("Введите не менее {0} символов!")
+              },
+            email: {
+                required: "Пожалуйста, введите свою почту",
+                email: "Неправильно введен адрес почты"
+            }
+        }
+    });
+}
+validateForms('#consultation-form');
+validateForms('#consultation form');
+validateForms('#order form');
+
+// маска ввода номера телефона в контактных формах
+
+$("input[name=phone").mask("+7 (999) 999-9999");
+
+// отправка форм на почту
+
+$('form').submit(function(e) {
+    e.preventDefault();
+    $.ajax({
+        type: "POST",
+        url: "mailer/smart.php",
+        data: $(this).serialize()
+    }).done(function() {
+        $(this).find("input").val("");
+        $('#consultation, #order').fadeOut();
+        $('.overlay, #thanks').fadeIn('slow');
+
+        $('form').trigger('reset');
+    });
+    return false;
+});
+
+// появление и скрытие элемента (стрелки) для перемотки
+
+$(window).scroll(function() {
+    if ($(this).scrollTop() > 1600) {
+        $('.pageup').fadeIn();
+    } else {
+        $('.pageup').fadeOut();
+    }
+});
+
+// плавная перемотка страницы вверх
+
+$("a[href^='#']").click(function(){
+    const _href = $(this).attr("href");
+    $("html, body").animate({scrollTop: $(_href).offset().top+"px"});
+    return false;
 });

@@ -50,6 +50,19 @@
         padding-right: 40px;
         padding-left: 40px;
     }
+    .error {
+        border: 1px solid red;
+    }
+    label.error {
+        border: none;
+        text-align: left;
+        margin-bottom: 15px;
+        margin-top: -5px;
+        font-size: 0.8rem;
+    }
+    label[id='email-error'] {
+        margin-top: -10px;
+    }
 }
 
 #consultation, #order, #thanx  {
