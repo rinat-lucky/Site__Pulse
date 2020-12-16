@@ -1,4 +1,21 @@
+@import 'libs/bootstrap-reboot.min';
+@import 'libs/tiny-animate';
+@import 'libs/animate.min';
+@import 'libs/stylesheet';
+
 @import 'base/variables';
+@import 'base/animate';
+
+* {
+    font-family: 'Museo Sans Cyrl', sans-serif;
+}
+
+.container {
+    position: relative;
+    max-width: 950px;
+    margin: 0 auto;
+}
+
 @import 'blocks/promo';
 @import 'blocks/header';
 @import 'blocks/buttons';
@@ -12,13 +29,3 @@
 @import 'blocks/footer';
 @import 'blocks/modal';
 @import 'blocks/pageup';
-
-* {
-    font-family: 'Museo Sans Cyrl', sans-serif;
-}
-
-.container {
-    position: relative;
-    max-width: 950px;
-    margin: 0 auto;
-}

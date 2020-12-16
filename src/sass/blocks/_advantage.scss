@@ -10,6 +10,11 @@
     &__item {
         width: 25%;
         text-align: center;
+        &_animated {
+            animation-name: heartbeat;
+            animation-duration: 1.5s;
+            animation-iteration-count: infinite;
+        }
     }
     &__title {
         font-size: 18px;
